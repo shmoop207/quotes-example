@@ -1,0 +1,43 @@
+
+.quote-item{
+    float: left;
+    padding:20px;
+    margin:20px;
+    transition: all 0.5s;
+    border-radius: 6px;
+    text-align: center;
+    min-width: 200px;
+
+}
+
+.quote-trend-up{
+    background: rgb(46, 204, 113);
+}
+
+.quote-trend-down{
+    background: rgb(231, 76, 60);
+}
+
+.quote-title{
+    font-size: 30px;
+    font-weight:300;
+}
+
+.quote-price{
+    font-size: 20px;
+}
+
+.quote-change{
+    margin-top:5px;
+    font-size: 16px;
+}
+
+.quote-date{
+    margin-top:5px;
+    font-size: 12px;
+    color:#444;
+}
+
+.quote-volume{
+    margin-top:5px;
+}
