@@ -23,8 +23,9 @@ On Windows/Mac/Linux:
 After running go to this address:
 
 	http://locahost:8080/
-	
 
+### Tests
+    $ grunt test
 
 	
 	
