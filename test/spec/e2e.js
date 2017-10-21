@@ -21,7 +21,7 @@ describe('Appolo Http e2e', () => {
         yield Q.delay(1000);
         let res = yield request(appolo.handleRequest)
             .get('/getAllQuotes');
-        res.body.should.be.eq;
+        res.body.APPL.lastprice.should.be.eq;
     }));
 });
 //# sourceMappingURL=e2e.js.map
