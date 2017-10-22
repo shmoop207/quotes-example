@@ -46,7 +46,7 @@ export class SocketClient extends EventDispatcher {
             });
 
             if (callback && _.isFunction(callback)) {
-                callback(quotes);
+                (callback as Function)(quotes);
             }
         }
     }
