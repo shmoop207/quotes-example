@@ -1,25 +1,22 @@
 import winston = require('winston');
-import {Injector} from 'appolo-http';
+import    {Injector} from 'appolo';
 
 
 
 export = function(){
 
     return function(inject :Injector){
-        let transports = [];
+        const logger = winston.createLogger({
+            level: 'info',
+            format: winston.format.json(),
+            transports: [
 
-
-        transports.push(new (winston.transports.Console)({
-            json: true,
-            timestamp: true,
-            handleExceptions: true
-        }));
-
-
-        let logger = new (winston.Logger)({
-            transports: transports,
-            exitOnError: false
+            ]
         });
+
+        logger.add(new winston.transports.Console({
+            format: winston.format.simple()
+        }));
 
         inject.addObject('logger', logger);
 

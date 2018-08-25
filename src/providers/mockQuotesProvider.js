@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const appolo_http_1 = require("appolo-http");
+const appolo_1 = require("appolo");
 const _ = require("lodash");
 const moment = require("moment");
 const util_1 = require("../util/util");
-let MockQuotesProvider = class MockQuotesProvider extends appolo_http_1.EventDispatcher {
+let MockQuotesProvider = class MockQuotesProvider extends appolo_1.EventDispatcher {
     constructor() {
         super();
         this.UPDATE_RATE = 1000;
@@ -40,15 +40,15 @@ let MockQuotesProvider = class MockQuotesProvider extends appolo_http_1.EventDis
     }
 };
 tslib_1.__decorate([
-    appolo_http_1.inject()
+    appolo_1.inject()
 ], MockQuotesProvider.prototype, "env", void 0);
 tslib_1.__decorate([
-    appolo_http_1.inject()
+    appolo_1.inject()
 ], MockQuotesProvider.prototype, "logger", void 0);
 MockQuotesProvider = tslib_1.__decorate([
-    appolo_http_1.define(),
-    appolo_http_1.singleton(),
-    appolo_http_1.lazy()
+    appolo_1.define(),
+    appolo_1.singleton(),
+    appolo_1.lazy()
 ], MockQuotesProvider);
 exports.MockQuotesProvider = MockQuotesProvider;
 //# sourceMappingURL=mockQuotesProvider.js.map

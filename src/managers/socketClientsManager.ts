@@ -1,4 +1,4 @@
-import {define, singleton, inject,initMethod, injectFactoryMethod} from 'appolo-http';
+import {define, singleton, inject,initMethod, injectFactoryMethod} from 'appolo';
 import    _ = require('lodash');
 import    Q = require('bluebird');
 import {SocketClient} from "../models/socketClient";

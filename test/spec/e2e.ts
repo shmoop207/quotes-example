@@ -1,31 +1,30 @@
 import    chai = require('chai');
 import    request = require('supertest');
-import   appolo = require('appolo-http');
+import   {createApp,App} from 'appolo'
 import   Q = require('bluebird');
 let should = chai.should();
 
-describe('Appolo Http e2e', () => {
-
+describe('Appolo e2e', () => {
+    let app:App;
 
     beforeEach(async () => {
-        await appolo.launch({
+        app = await createApp({
             port: 8183,
             environment: "testing",
-            paths: ['config', 'server']
-        });
+        }).launch()
     });
 
-    afterEach(() => {
-        appolo.launcher.reset();
+    afterEach(async () => {
+        await app.reset();
     });
 
     it('should get quotes', async () => {
 
         await Q.delay(1000)
 
-        let res = await request(appolo.handleRequest)
+        let res = await request(app.handle)
             .get('/getAllQuotes');
 
-        res.body.APPL.lastprice.should.be.eq
+        res.body.AAPL.lastPrice.should.be.ok
     })
 });

@@ -1,4 +1,4 @@
-import {define, singleton, inject, EventDispatcher,initMethod} from 'appolo-http';
+import {define, singleton, inject, EventDispatcher,initMethod} from 'appolo';
 import    _ = require('lodash');
 import    Q = require('bluebird');
 import {IQuotesProvider} from "../providers/IQuotesProvider";

@@ -1,4 +1,4 @@
-import {define, singleton, inject, EventDispatcher} from 'appolo-http';
+import {define, singleton, inject, EventDispatcher} from 'appolo';
 import  sio = require('socket.io');
 
 import    _ = require('lodash');

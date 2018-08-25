@@ -1,8 +1,8 @@
 Real-time Stock example 
 ===
 
-- This application created as part of a [appolo-http][1], node.js and socket.io tutorial.
-- the server is written in node.js with [appolo-http][2] framework
+- This application created as part of a [appolo][1], node.js and socket.io tutorial.
+- the server is written in node.js with [appolo][2] framework
 
 Please note that this data stream has live data but the numbers are randomized! 
 Do not make financial decisions based on these random numbers
@@ -32,6 +32,6 @@ After running go to this address:
 ###Enjoy!
 
 
-  [1]: https://github.com/shmoop207/appolo-http
-  [2]: https://github.com/shmoop207/appolo-http
+  [1]: https://github.com/shmoop207/appolo
+  [2]: https://github.com/shmoop207/appolo
   [4]: http://appolo-express-quotes-example.herokuapp.com/

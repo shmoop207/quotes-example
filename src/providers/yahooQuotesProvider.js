@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const appolo_http_1 = require("appolo-http");
+const appolo_1 = require("appolo");
 const _ = require("lodash");
 const yahooFinance = require("yahoo-finance");
 const moment = require("moment");
-let YahooQuotesProvider = class YahooQuotesProvider extends appolo_http_1.EventDispatcher {
+let YahooQuotesProvider = class YahooQuotesProvider extends appolo_1.EventDispatcher {
     constructor() {
         super();
         this._quotes = {};
@@ -47,15 +47,15 @@ let YahooQuotesProvider = class YahooQuotesProvider extends appolo_http_1.EventD
     }
 };
 tslib_1.__decorate([
-    appolo_http_1.inject()
+    appolo_1.inject()
 ], YahooQuotesProvider.prototype, "env", void 0);
 tslib_1.__decorate([
-    appolo_http_1.inject()
+    appolo_1.inject()
 ], YahooQuotesProvider.prototype, "logger", void 0);
 YahooQuotesProvider = tslib_1.__decorate([
-    appolo_http_1.define(),
-    appolo_http_1.singleton(),
-    appolo_http_1.lazy()
+    appolo_1.define(),
+    appolo_1.singleton(),
+    appolo_1.lazy()
 ], YahooQuotesProvider);
 exports.YahooQuotesProvider = YahooQuotesProvider;
 //# sourceMappingURL=yahooQuotesProvider.js.map

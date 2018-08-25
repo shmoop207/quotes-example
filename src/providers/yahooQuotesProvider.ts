@@ -1,15 +1,15 @@
 "use strict";
 
-import {define, singleton, inject, EventDispatcher,lazy} from 'appolo-http';
+import {define, singleton, inject, EventDispatcher,lazy} from 'appolo';
 import    _ = require('lodash');
 import    Q = require('bluebird');
 import    yahooFinance = require('yahoo-finance');
 import    moment = require('moment');
 import {Util} from "../util/util";
 import {IQuote} from "../models/IQuote";
-import {IEnv} from "../../config/environments/IEnv";
+import {IEnv} from "../../config/env/IEnv";
 import {IQuotesProvider} from "./IQuotesProvider";
-import {LoggerInstance} from "winston";
+import {Logger} from "winston";
 
 
 
@@ -19,7 +19,7 @@ import {LoggerInstance} from "winston";
 export class YahooQuotesProvider extends EventDispatcher implements IQuotesProvider{
 
     @inject() env :IEnv;
-    @inject() logger :LoggerInstance;
+    @inject() logger :Logger;
 
 
     private _quotes: { [index: string]: IQuote };

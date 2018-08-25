@@ -1,10 +1,10 @@
 import  sio = require('socket.io');
 import  http = require('http');
-import    appolo = require('appolo-http');
+import    {Injector} from 'appolo';
 
 export = function () {
 
-    return function (injector: appolo.Injector, httpServer: http.Server) {
+    return function (injector: Injector, httpServer: http.Server) {
 
         let io = sio.listen(httpServer);
 
