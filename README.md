@@ -22,7 +22,7 @@ On Windows/Mac/Linux:
 	
 After running go to this address:
 
-	http://locahost:8080/
+	http://locahost:3000/
 
 ### Tests
     $ grunt test

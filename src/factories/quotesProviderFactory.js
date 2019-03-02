@@ -3,14 +3,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const appolo_1 = require("appolo");
 const mockQuotesProvider_1 = require("../providers/mockQuotesProvider");
-const yahooQuotesProvider_1 = require("../providers/yahooQuotesProvider");
 let QuotesProvider = class QuotesProvider {
     get() {
         switch (this.env.quotesProvider) {
             case "mock":
                 return this.injector.get(mockQuotesProvider_1.MockQuotesProvider);
-            case "yahoo":
-                return this.injector.get(yahooQuotesProvider_1.YahooQuotesProvider);
         }
     }
 };

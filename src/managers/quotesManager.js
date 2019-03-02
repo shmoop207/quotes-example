@@ -12,7 +12,7 @@ let QuotesManager = class QuotesManager {
     }
     _onQuoteReceived(newQuote) {
         this._quotes[newQuote.symbol] = newQuote;
-        this.io.sockets.in(newQuote.symbol).emit('quoteReceived', newQuote);
+        this.socketProvider.socketServer.sockets.in(newQuote.symbol).emit('quoteReceived', newQuote);
     }
     getQuote(symbol) {
         return this.getQuotes([symbol])[symbol];
@@ -34,7 +34,7 @@ tslib_1.__decorate([
 ], QuotesManager.prototype, "quotesProvider", void 0);
 tslib_1.__decorate([
     appolo_1.inject()
-], QuotesManager.prototype, "io", void 0);
+], QuotesManager.prototype, "socketProvider", void 0);
 tslib_1.__decorate([
     appolo_1.initMethod()
 ], QuotesManager.prototype, "initialize", null);

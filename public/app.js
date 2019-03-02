@@ -7,15 +7,17 @@
 
         console.log('socket connected')
 
+        socket.emit('subscribe', ['AAPL', 'GOOG', 'MSFT', 'FB', 'YHOO', 'LNKD', 'ZNGA', 'ORCL'], function (data) {
+
+            quotes = data;
+
+            console.log('subscribe', data)
+        });
+
 
     });
 
-    socket.emit('subscribe', ['AAPL', 'GOOG', 'MSFT', 'FB', 'YHOO', 'LNKD', 'ZNGA', 'ORCL'], function (data) {
 
-        quotes = data;
-
-        console.log('subscribe', data)
-    });
 
     socket.on('quoteReceived', function (data) {
 

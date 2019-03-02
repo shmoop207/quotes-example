@@ -1,7 +1,7 @@
 "use strict";
 module.exports = {
     name: 'All',
-    port: 8080,
+    port: 3000,
     symbols: ['AAPL', 'GOOG', 'MSFT', 'FB', 'YHOO', 'LNKD', 'ZNGA', 'ORCL'],
     quotesProvider: 'mock',
 };

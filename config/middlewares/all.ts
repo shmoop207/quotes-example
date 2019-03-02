@@ -7,7 +7,6 @@ import    path = require('path');
 
 export = function (app: App) {
 
-    app.viewEngine(consolidate.nunjucks);
     app.use(serve(path.join(__dirname, "../../public")))
 
 

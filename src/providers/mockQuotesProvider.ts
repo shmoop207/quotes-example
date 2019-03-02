@@ -8,7 +8,7 @@ import {Util} from "../util/util";
 import {IQuote} from "../models/IQuote";
 import {IEnv} from "../../config/env/IEnv";
 import {IQuotesProvider} from "./IQuotesProvider";
-import {Logger} from "winston";
+import {ILogger} from "@appolo/logger";
 
 
 @define()
@@ -17,7 +17,7 @@ import {Logger} from "winston";
 export class MockQuotesProvider extends EventDispatcher implements IQuotesProvider{
 
     @inject() env :IEnv;
-    @inject() logger :Logger;
+    @inject() logger :ILogger;
 
     private readonly UPDATE_RATE=  1000;
     private readonly VOLATILITY =  1;

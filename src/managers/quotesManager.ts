@@ -1,4 +1,5 @@
 import {define, singleton, inject, EventDispatcher,initMethod} from 'appolo';
+import {SocketProvider} from '@appolo/socket';
 import    _ = require('lodash');
 import    Q = require('bluebird');
 import {IQuotesProvider} from "../providers/IQuotesProvider";
@@ -11,7 +12,7 @@ export class QuotesManager {
     private _quotes: { [index: string]: IQuote };
 
     @inject() private quotesProvider: IQuotesProvider;
-    @inject() private io: SocketIO.Server;
+    @inject() private socketProvider: SocketProvider;
 
     constructor() {
         this._quotes = {};
@@ -27,7 +28,7 @@ export class QuotesManager {
 
             this._quotes[newQuote.symbol] = newQuote;
 
-            this.io.sockets.in(newQuote.symbol).emit('quoteReceived', newQuote);
+            this.socketProvider.socketServer.sockets.in(newQuote.symbol).emit('quoteReceived', newQuote);
 
     }
 

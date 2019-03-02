@@ -1,34 +1,22 @@
 import {define, singleton, inject, EventDispatcher} from 'appolo';
-import  sio = require('socket.io');
+import {socket,SocketController,action} from '@appolo/socket';
 
 import    _ = require('lodash');
 import    Q = require('bluebird');
 import {QuotesManager} from "../managers/quotesManager";
 import {IQuote} from "./IQuote";
 
-@define()
-export class SocketClient extends EventDispatcher {
+@socket()
+export class SocketClient extends SocketController {
 
-    private _socket: SocketIO.Socket;
-    private _symbols: IQuote[];
+    @inject() quotesManager:QuotesManager;
 
-    @inject() quotesManager:QuotesManager
-
-    public initialize(socket: SocketIO.Socket) {
-
-        this._socket = socket;
-        this._symbols = [];
-
-        this._socket.on('subscribe', this._onSubscribe.bind(this));
-        this._socket.on('unsubscribe', this._onUnSubscribe.bind(this));
-        this._socket.on('disconnect', this._onSocketDisconnect.bind(this));
-    }
 
     private _getSymbolsFromParam(data: string[] | string): string[] {
         return _.isArray(data) ? data : (_.isString(data) ? data.split(',') : []);
     }
 
-
+    @action("subscribe")
     private _onSubscribe(data:any, callback:Function) {
 
         let symbols = this._getSymbolsFromParam(data);
@@ -36,13 +24,13 @@ export class SocketClient extends EventDispatcher {
         if (symbols) {
 
             _.forEach(symbols, (symbol) => {
-                this._socket.join(symbol);
+                this.socket.join(symbol);
             });
 
             let quotes = this.quotesManager.getQuotes(symbols);
 
             _.forEach(quotes, (quote) => {
-                this._socket.emit(quote.symbol, quote)
+                this.socket.emit(quote.symbol, quote)
             });
 
             if (callback && _.isFunction(callback)) {
@@ -51,23 +39,16 @@ export class SocketClient extends EventDispatcher {
         }
     }
 
-
-    public getId() {
-        return this._socket.id
-    }
-
+    @action("unsubscribe")
     private _onUnSubscribe(data:any) {
 
         let symbols = this._getSymbolsFromParam(data);
 
         _.forEach(symbols, (symbol) => {
 
-            this._socket.leave(symbol);
+            this.socket.leave(symbol);
 
         });
     }
 
-    private _onSocketDisconnect() {
-        this.fireEvent('disconnect', this);
-    }
 }
