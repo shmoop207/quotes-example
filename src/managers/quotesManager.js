@@ -12,7 +12,7 @@ let QuotesManager = class QuotesManager {
     }
     _onQuoteReceived(newQuote) {
         this._quotes[newQuote.symbol] = newQuote;
-        this.socketProvider.socketServer.sockets.in(newQuote.symbol).emit('quoteReceived', newQuote);
+        this.socketProvider.sendToRoom(newQuote.symbol, 'quoteReceived', newQuote);
     }
     getQuote(symbol) {
         return this.getQuotes([symbol])[symbol];

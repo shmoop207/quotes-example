@@ -3,7 +3,7 @@ import {SocketProvider} from '@appolo/socket';
 import    _ = require('lodash');
 import    Q = require('bluebird');
 import {IQuotesProvider} from "../providers/IQuotesProvider";
-import {IQuote} from "../models/IQuote";
+import {IQuote} from "../common/IQuote";
 
 @define()
 @singleton()
@@ -28,10 +28,8 @@ export class QuotesManager {
 
             this._quotes[newQuote.symbol] = newQuote;
 
-            this.socketProvider.socketServer.sockets.in(newQuote.symbol).emit('quoteReceived', newQuote);
-
+            this.socketProvider.sendToRoom(newQuote.symbol,'quoteReceived', newQuote);
     }
-
 
     public getQuote(symbol: string): IQuote {
         return this.getQuotes([symbol])[symbol];

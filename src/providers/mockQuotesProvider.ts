@@ -5,7 +5,7 @@ import    _ = require('lodash');
 import    Q = require('bluebird');
 import    moment = require('moment');
 import {Util} from "../util/util";
-import {IQuote} from "../models/IQuote";
+import {IQuote} from "../common/IQuote";
 import {IEnv} from "../../config/env/IEnv";
 import {IQuotesProvider} from "./IQuotesProvider";
 import {ILogger} from "@appolo/logger";

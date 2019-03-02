@@ -1,4 +1,4 @@
-import {IQuote} from "../models/IQuote";
+import {IQuote} from "../common/IQuote";
 
 export interface IQuotesProvider{
     initialize();

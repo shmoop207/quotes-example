@@ -4,10 +4,9 @@ import {socket,SocketController,action} from '@appolo/socket';
 import    _ = require('lodash');
 import    Q = require('bluebird');
 import {QuotesManager} from "../managers/quotesManager";
-import {IQuote} from "./IQuote";
 
 @socket()
-export class SocketClient extends SocketController {
+export class QuotesSocketController extends SocketController {
 
     @inject() quotesManager:QuotesManager;
 

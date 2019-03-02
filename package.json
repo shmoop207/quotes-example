@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@appolo/logger": "0.0.14",
-    "@appolo/socket": "0.0.2",
+    "@appolo/socket": "0.0.3",
     "@appolo/view": "0.0.8",
     "appolo": "~6.0.60",
     "bluebird": "~3.5.3",
