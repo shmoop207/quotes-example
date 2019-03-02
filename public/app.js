@@ -1,7 +1,7 @@
 (function init() {
     var quotes = {};
 
-    var socket = io.connect(socketUrl);
+    var socket = io.connect(socketUrl,{ "transports": [ 'websocket'] });
 
     socket.on('connect', function () {
 
