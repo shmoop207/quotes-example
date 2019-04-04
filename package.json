@@ -6,14 +6,14 @@
     "start": "node app"
   },
   "engines": {
-    "node": "8.4.x",
-    "npm": "5.4.x"
+    "node": "10.4.x",
+    "npm": "6.4.x"
   },
   "dependencies": {
-    "@appolo/logger": "0.0.14",
-    "@appolo/socket": "0.0.3",
-    "@appolo/view": "0.0.8",
-    "appolo": "~6.0.60",
+    "@appolo/logger": "^1.0.3",
+    "@appolo/socket": "^0.0.3",
+    "@appolo/view": "^0.0.8",
+    "appolo": "^6.0.66",
     "bluebird": "~3.5.3",
     "consolidate": "^0.15.1",
     "lodash": "~4.17.11",
