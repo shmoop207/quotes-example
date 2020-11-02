@@ -1,4 +1,4 @@
-import {define, singleton, inject, EventDispatcher} from 'appolo';
+import { inject} from '@appolo/inject';
 import {socket,SocketController,action} from '@appolo/socket';
 
 import    _ = require('lodash');

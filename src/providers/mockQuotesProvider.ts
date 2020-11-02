@@ -1,9 +1,8 @@
 "use strict";
 
-import {define, singleton, inject, EventDispatcher,lazy} from 'appolo';
+import {define, singleton, inject,lazy} from '@appolo/inject';
+import {EventDispatcher} from '@appolo/events';
 import    _ = require('lodash');
-import    Q = require('bluebird');
-import    moment = require('moment');
 import {Util} from "../util/util";
 import {IQuote} from "../common/IQuote";
 import {IEnv} from "../../config/env/IEnv";
@@ -66,7 +65,7 @@ export class MockQuotesProvider extends EventDispatcher implements IQuotesProvid
         let change = Math.round(_.random(-this.VOLATILITY, this.VOLATILITY, true) * 100) / 100,
             originLastPrice = this._originQuotes[quote.symbol].lastPrice;
 
-        quote.lastDate = moment().utc().valueOf();
+        quote.lastDate = Date.now();
         quote.volume = _.random(100, 1000) * 10;
         quote.lastPrice = Util.toFixed(quote.lastPrice + change, 2);
         quote.dailyChange = Util.toFixed(quote.lastPrice - originLastPrice, 2);

@@ -1,13 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.QuotesController = void 0;
 const tslib_1 = require("tslib");
-const appolo_1 = require("appolo");
-let QuotesController = class QuotesController extends appolo_1.Controller {
-    getQuote(req, res, model) {
+const route_1 = require("@appolo/route");
+const inject_1 = require("@appolo/inject");
+const validator_1 = require("@appolo/validator");
+let QuotesController = class QuotesController extends route_1.Controller {
+    getQuote(model) {
         let quote = this.quotesManager.getQuote(model.symbol);
         return quote;
     }
-    getQuotes(req, res, model) {
+    getQuotes(model) {
         let quotes = this.quotesManager.getQuotes(model.symbols);
         this.sendOk(quotes);
     }
@@ -17,21 +20,23 @@ let QuotesController = class QuotesController extends appolo_1.Controller {
     }
 };
 tslib_1.__decorate([
-    appolo_1.inject()
+    inject_1.inject()
 ], QuotesController.prototype, "quotesManager", void 0);
 tslib_1.__decorate([
-    appolo_1.get("/getQuote"),
-    appolo_1.validation("symbol", appolo_1.validator.string().required())
+    route_1.get("/getQuote"),
+    validator_1.validate({ "symbol": validator_1.string().required() }),
+    tslib_1.__param(0, route_1.query())
 ], QuotesController.prototype, "getQuote", null);
 tslib_1.__decorate([
-    appolo_1.get("/getQuotes"),
-    appolo_1.validation("symbols", appolo_1.validator.array().items(appolo_1.validator.string()).required())
+    route_1.get("/getQuotes"),
+    validator_1.validate({ "symbols": validator_1.array().items(validator_1.string().required()) }),
+    tslib_1.__param(0, route_1.query())
 ], QuotesController.prototype, "getQuotes", null);
 tslib_1.__decorate([
-    appolo_1.get("/getAllQuotes")
+    route_1.get("/getAllQuotes")
 ], QuotesController.prototype, "getAllQuotes", null);
 QuotesController = tslib_1.__decorate([
-    appolo_1.controller()
+    route_1.controller()
 ], QuotesController);
 exports.QuotesController = QuotesController;
 //# sourceMappingURL=quotesController.js.map

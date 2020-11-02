@@ -1,4 +1,4 @@
-import {define, singleton, inject, EventDispatcher,initMethod} from 'appolo';
+import {define, singleton, inject,init} from '@appolo/inject';
 import {SocketProvider} from '@appolo/socket';
 import    _ = require('lodash');
 import    Q = require('bluebird');
@@ -18,7 +18,7 @@ export class QuotesManager {
         this._quotes = {};
     }
 
-    @initMethod()
+    @init()
     public initialize() {
 
         this.quotesProvider.on('quoteReceived', this._onQuoteReceived, this);

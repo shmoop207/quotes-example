@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.QuotesSocketController = void 0;
 const tslib_1 = require("tslib");
-const appolo_1 = require("appolo");
+const inject_1 = require("@appolo/inject");
 const socket_1 = require("@appolo/socket");
 const _ = require("lodash");
 let QuotesSocketController = class QuotesSocketController extends socket_1.SocketController {
@@ -31,7 +32,7 @@ let QuotesSocketController = class QuotesSocketController extends socket_1.Socke
     }
 };
 tslib_1.__decorate([
-    appolo_1.inject()
+    inject_1.inject()
 ], QuotesSocketController.prototype, "quotesManager", void 0);
 tslib_1.__decorate([
     socket_1.action("subscribe")

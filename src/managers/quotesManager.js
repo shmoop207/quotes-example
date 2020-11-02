@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.QuotesManager = void 0;
 const tslib_1 = require("tslib");
-const appolo_1 = require("appolo");
+const inject_1 = require("@appolo/inject");
 const _ = require("lodash");
 let QuotesManager = class QuotesManager {
     constructor() {
@@ -30,17 +31,17 @@ let QuotesManager = class QuotesManager {
     }
 };
 tslib_1.__decorate([
-    appolo_1.inject()
+    inject_1.inject()
 ], QuotesManager.prototype, "quotesProvider", void 0);
 tslib_1.__decorate([
-    appolo_1.inject()
+    inject_1.inject()
 ], QuotesManager.prototype, "socketProvider", void 0);
 tslib_1.__decorate([
-    appolo_1.initMethod()
+    inject_1.init()
 ], QuotesManager.prototype, "initialize", null);
 QuotesManager = tslib_1.__decorate([
-    appolo_1.define(),
-    appolo_1.singleton()
+    inject_1.define(),
+    inject_1.singleton()
 ], QuotesManager);
 exports.QuotesManager = QuotesManager;
 //# sourceMappingURL=quotesManager.js.map

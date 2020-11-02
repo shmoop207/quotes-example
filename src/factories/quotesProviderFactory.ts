@@ -1,5 +1,5 @@
 "use strict";
-import {define, factory, IFactory, inject, Injector, singleton} from 'appolo';
+import {define, factory, IFactory, inject, Injector, singleton} from '@appolo/inject';
 import {IQuotesProvider} from "../providers/IQuotesProvider";
 import {IEnv} from "../../config/env/IEnv";
 import {MockQuotesProvider} from "../providers/mockQuotesProvider";

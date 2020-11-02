@@ -6,37 +6,32 @@
     "start": "node app"
   },
   "engines": {
-    "node": "10.4.x",
-    "npm": "6.4.x"
+    "node": "14.x.x",
+    "npm": "6.x.x"
   },
   "dependencies": {
-    "@appolo/logger": "^1.0.3",
-    "@appolo/socket": "^0.0.3",
-    "@appolo/view": "^0.0.8",
-    "appolo": "^6.0.66",
-    "bluebird": "~3.5.3",
-    "consolidate": "^0.15.1",
-    "lodash": "~4.17.11",
-    "moment": "2.24.0",
-    "nunjucks": "^3.1.3",
-    "serve-static": "^1.13.2",
-    "tslib": "^1.9.3"
+    "@appolo/core": "^8.0.5",
+    "@appolo/logger": "^8.0.4",
+    "@appolo/socket": "^8.0.0",
+    "@appolo/validator": "^8.0.0",
+    "@appolo/view": "^8.0.1",
+    "consolidate": "^0.16.0",
+    "lodash": "^4.17.20",
+    "nunjucks": "^3.2.2",
+    "serve-static": "^1.14.1",
+    "tslib": "^2.0.3"
   },
   "devDependencies": {
-    "@types/bluebird": "^3.5.26",
-    "@types/joi": "^14.3.2",
-    "@types/lodash": "^4.14.121",
-    "@types/mocha": "^5.2.6",
-    "@types/node": "^11.10.4",
-    "@types/socket.io": "^2.1.2",
-    "@types/supertest": "^2.0.7",
+    "@types/bluebird": "^3.5.33",
+    "@types/lodash": "^4.14.164",
+    "@types/mocha": "^8.0.3",
+    "@types/node": "^14.14.6",
+    "@types/socket.io": "^2.1.11",
+    "@types/supertest": "^2.0.10",
     "chai": "^4.2.0",
-    "grunt": "1.0.3",
-    "grunt-cli": "^1.3.2",
-    "grunt-mocha-test": "0.13.3",
-    "mocha": "^6.0.2",
-    "socket.io-client": "2.1.1",
-    "supertest": "^3.4.2",
-    "typescript": "^3.3.0"
+    "mocha": "^8.2.0",
+    "socket.io-client": "2.3.1",
+    "supertest": "^6.0.0",
+    "typescript": "^4.0.5"
   }
 }

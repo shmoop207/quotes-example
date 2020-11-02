@@ -1,6 +1,6 @@
 import    chai = require('chai');
 import    request = require('supertest');
-import   {createApp,App} from 'appolo'
+import   {createApp,App} from '@appolo/core'
 import   Q = require('bluebird');
 let should = chai.should();
 
@@ -22,7 +22,7 @@ describe('Appolo e2e', () => {
 
         await Q.delay(1000)
 
-        let res = await request(app.handle)
+        let res = await request(app.route.handle)
             .get('/getAllQuotes');
 
         res.body.AAPL.lastPrice.should.be.ok

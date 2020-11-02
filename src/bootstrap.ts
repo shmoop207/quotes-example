@@ -1,8 +1,8 @@
 "use strict";
-import {define, singleton, bootstrap, inject, IBootstrap} from 'appolo';
+import { bootstrap, IBootstrap} from '@appolo/engine';
+import {define, singleton, inject} from '@appolo/inject';
 import {ILogger} from '@appolo/logger';
-import    _ = require('lodash');
-import    Q = require('bluebird');
+
 import {IQuotesProvider} from "./providers/IQuotesProvider";
 
 @define()
