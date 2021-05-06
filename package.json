@@ -16,7 +16,7 @@
     "@appolo/validator": "^8.0.0",
     "@appolo/view": "^8.0.1",
     "consolidate": "^0.16.0",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "nunjucks": "^3.2.2",
     "serve-static": "^1.14.1",
     "tslib": "^2.0.3"
